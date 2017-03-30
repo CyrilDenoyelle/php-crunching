@@ -144,20 +144,5 @@
 		</li>
 
 	</ul>
-	<?php
-	// array(12) {
-	// 	["im:name"]=> array(1) { ["label"]=> string(11) "The Martian" }
-	// 	["im:image"]=> array(3) { [0]=> array(2) { ["label"]=> string(121) "http://is2.mzstatic.com/image/thumb/Video49/v4/27/97/1b/27971b4f-1d05-812b-a09f-0d51b9c7b264/pr_source.lsr/60x60bb-85.jpg" ["attributes"]=> array(1) { ["height"]=> string(2) "60" } } [1]=> array(2) { ["label"]=> string(121) "http://is2.mzstatic.com/image/thumb/Video49/v4/27/97/1b/27971b4f-1d05-812b-a09f-0d51b9c7b264/pr_source.lsr/60x60bb-85.jpg" ["attributes"]=> array(1) { ["height"]=> string(2) "60" } } [2]=> array(2) { ["label"]=> string(123) "http://is4.mzstatic.com/image/thumb/Video49/v4/27/97/1b/27971b4f-1d05-812b-a09f-0d51b9c7b264/pr_source.lsr/170x170bb-85.jpg" ["attributes"]=> array(1) { ["height"]=> string(3) "170" } } }
-	// 	["summary"]=> array(1) {
-	// 		["label"]=> string(378) "From legendary director Ridley Scott (Alien, Prometheus) comes a gripping tale of human strength and the will to survive. During a mission to Mars, American astronaut Mark Watney (Matt Damon) is presumed dead and left behind. But Watney is still alive. Against all odds, he must find a way to contact Earth in the hope that scientists can devise a rescue plan to bring him home." }
-	// 		["im:price"]=> array(2) {
-	// 			["label"]=> string(6) "$14.99" ["attributes"]=> array(2) { ["amount"]=> string(8) "14.99000" ["currency"]=> string(3) "USD"
-	// 		}
-	// 	}
-	// 	["im:contentType"]=> array(1) {
-	// 		["attributes"]=> array(2) { ["term"]=> string(5) "Movie" ["label"]=> string(5) "Movie" } } ["rights"]=> array(1) { ["label"]=> string(68) "© 2015 Twentieth Century Fox Film Corporation. All rights reserved." } ["title"]=> array(1) { ["label"]=> string(26) "The Martian - Ridley Scott" } ["link"]=> array(2) { [0]=> array(1) { ["attributes"]=> array(3) { ["rel"]=> string(9) "alternate" ["type"]=> string(9) "text/html" ["href"]=> string(63) "https://itunes.apple.com/us/movie/the-martian/id1039586890?uo=2" } } [1]=> array(2) { ["im:duration"]=> array(1) { ["label"]=> string(8) "173600.0" } ["attributes"]=> array(5) { ["title"]=> string(7) "Preview" ["rel"]=> string(9) "enclosure" ["type"]=> string(11) "video/x-m4v" ["href"]=> string(149) "http://a1631.v.phobos.apple.com/us/r1000/160/Video2/v4/61/c9/da/61c9da86-9cf4-47f8-1a20-e7d0ef2e8e44/mzvf_4438736739303881681.640x354.h264lc.D2.p.m4v" ["im:assetType"]=> string(7) "preview" } } } ["id"]=> array(2) { ["label"]=> string(63) "https://itunes.apple.com/us/movie/the-martian/id1039586890?uo=2" ["attributes"]=> array(1) { ["im:id"]=> string(10) "1039586890" } } ["im:artist"]=> array(1) { ["label"]=> string(12) "Ridley Scott" } ["category"]=> array(1) { ["attributes"]=> array(4) { ["im:id"]=> string(4) "4413" ["term"]=> string(16) "Sci-Fi & Fantasy" ["scheme"]=> string(67) "https://itunes.apple.com/us/genre/movies-sci-fi-fantasy/id4413?uo=2" ["label"]=> string(16) "Sci-Fi & Fantasy" } } ["im:releaseDate"]=> array(2) { ["label"]=> string(25) "2015-10-02T00:00:00-07:00" ["attributes"]=> array(1) { ["label"]=> string(15) "October 2, 2015" }
-	// 	}
-	// }
-	?>
 </body>
 </html>
