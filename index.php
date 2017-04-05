@@ -21,11 +21,12 @@
 		<li><?php 
 			echo count(array_filter($dico, function($mot){
 				return(strpos($mot, "q") == strlen($mot));
-			})) ?> mot(s) finis(sent) par la lettre « q »  </li>
-		</ul>
-		<?php
-		$string = file_get_contents("films.json", FILE_USE_INCLUDE_PATH);
-		$brut = json_decode($string, true);
+			})) ?> mot(s) finis(sent) par la lettre « q » 
+		</li>
+	</ul>
+	<?php
+	$string = file_get_contents("films.json", FILE_USE_INCLUDE_PATH);
+	$brut = json_decode($string, true);
 	$top = $brut["feed"]["entry"]; # liste de films
 	?>
 	<ul>Exercices films :
@@ -37,21 +38,41 @@
 				?>
 			</ul>
 		</li>
-
+		<hr>
 		<li>Quel est le classement du film « Gravity » ? <br />
-			<?php foreach ($top as $key => $value) {
+			<?php
+			foreach ($top as $key => $value) {
 				if($value["im:name"]['label'] == "Gravity")
 					echo $key;
-			} ?>
+			}
+			?>
 		</li>
-
+		<hr>
 		<li>Quel est le réalisateur du film « The LEGO Movie » ? <br />
-			<?php foreach ($top as $key => $value) {
+			<?php
+			foreach ($top as $key => $value) {
 				if($value["im:name"]['label'] == "The LEGO Movie")
 					echo $value["im:artist"]['label'];
-			} ?>
-		</li>
+			}
+			?>
 
+		</li>
+		<hr>
+		<li>Quel est le réalisateur du film « The LAGO Movie » ?(version Exception) <br />
+			<?php
+			try{
+				foreach ($top as $key => $value) {
+					if($value["im:name"]['label'] == "The LAGO Movie")
+						throw new Exception($value["im:artist"]['label']);
+				}
+				throw new Exception("pas de film de ce nom dans la liste");
+				
+			}catch(Exception $e){
+				echo $e->getMessage();
+			}
+			?>
+		</li>
+		<hr>
 		<li>Combien de films sont sortis avant 2000 ? <br />
 			<?php
 			echo count(array_filter($top, function($film){
@@ -59,7 +80,21 @@
 			}))
 			?>
 		</li>
-
+		<hr>
+		<li>Combien de films sont sortis avant 1946 ? (version Exception) <br />
+			<?php
+			try {
+				$avantdate = count(array_filter($top, function($film){
+					return(explode('-', $film["im:releaseDate"]['label'])[0] < 1946);
+				}));
+				if($avantdate > 0)throw new Exception($avantdate);
+				throw new Exception($avantdate);
+			} catch (Exception $e) {
+				echo $e->getMessage();
+			}
+			?>
+		</li>
+		<hr>
 		<li>Quel est le film le plus récent ? Le plus vieux ? <br />
 			<?php 
 			$topsort = $top;
@@ -72,7 +107,7 @@
 			echo "le plus vieux film est \"" . $topsort[0]['im:name']['label'] . "\" et le plus récent est \"" . $topsort[count($topsort)-1]['im:name']['label'] . "\" <br />";
 			?>
 		</li>
-
+		<hr>
 		<li>Quelle est la catégorie de films la plus représentée ? <br />
 			<?php 
 			$categorycount = [];
@@ -82,7 +117,7 @@
 			echo array_search(max($categorycount), $categorycount);
 			?>
 		</li>
-
+		<hr>
 		<li>Quel est le réalisateur le plus présent dans le top100 ? <br />
 			<?php 
 			$artistcount = [];
@@ -92,7 +127,7 @@
 			echo array_search(max($artistcount), $artistcount);
 			?>
 		</li>
-
+		<hr>
 		<li>Combien cela coûterait-il d'acheter le top10 sur iTunes ? de le louer ? <br />
 			<?php 
 			$rentaltotal = 0;
@@ -104,7 +139,7 @@
 			echo "rental top 10 price = " . $rentaltotal . "$ <br />buy top 10 price = " . $pricetotal . "$";
 			?>
 		</li>
-
+		<hr>
 		<li>Quel est le mois ayant vu le plus de sorties au cinéma ? <br />
 			<?php 
 			$monthcount = [];
@@ -124,7 +159,7 @@
 			}
 			?>
 		</li>
-
+		<hr>
 		<li>Quels sont les 10 meilleurs films à voir en ayant un budget limité ?
 			<?php
 			$tabPrice = [];
@@ -142,7 +177,6 @@
 			echo '<hr>';
 			?>
 		</li>
-
 	</ul>
 </body>
 </html>
